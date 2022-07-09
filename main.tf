@@ -31,21 +31,4 @@ resource "vultr_instance" "new_instance" {
   #}
   ddos_protection  = false
   activation_email = false
-
-  provisioner "remote-exec" {
-    inline = [
-      "sed -i '/^PasswordAuthentication/s/^.*$/PasswordAuthentication yes/' /etc/ssh/sshd_config",
-      "yum install -y sshpass",
-      "echo ${random_string.random.id} | passwd --stdin root",
-      "systemctl restart sshd"
-    ]
-    connection {
-      type        = "ssh"
-      user        = "root"
-      #private_key = file("/home/tritran/Desktop/id_rsa")
-      private_key = file("/opt/terraform/id_rsa")
-      host = self.main_ip
-      timeout = "30m"
-    }
-  }
 }
