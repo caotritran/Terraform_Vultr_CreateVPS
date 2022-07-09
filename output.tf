@@ -5,5 +5,5 @@ output "PublicIP" {
 
 output "password" {
   description = "The password is:"
-  value       = random_string.random.*.result
+  value       = nonsensitive(vultr_instance.new_instance.default_password)
 }
