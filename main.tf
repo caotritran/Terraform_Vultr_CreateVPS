@@ -45,21 +45,7 @@ resource "vultr_instance" "new_instance" {
       #private_key = file("/home/tritran/Desktop/id_rsa")
       private_key = file("/opt/terraform/id_rsa")
       host = self.main_ip
-      timeout = "15m"
+      timeout = "30m"
     }
   }
 }
-
-/*resource "digitalocean_volume" "volume-droplet-1" {
-  region                  = var.do_region
-  #name                    = join("", ["Volume", var.do_name])
-  name = "volume-droplet-1"
-  size                    = 100
-  initial_filesystem_type = "xfs"
-  description             = "add more volume to droplet"
-}
-
-resource "digitalocean_volume_attachment" "droplet-atach" {
-  droplet_id = digitalocean_droplet.droplet-1.id
-  volume_id  = digitalocean_volume.volume-droplet-1.id
-}*/
