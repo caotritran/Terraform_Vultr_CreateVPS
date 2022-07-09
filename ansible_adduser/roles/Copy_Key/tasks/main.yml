@@ -1,0 +1,16 @@
+---
+- name: create folder .ssh
+  file:
+    path: /home/deploy/.ssh
+    state: directory
+    owner: deploy
+    group: deploy
+    mode: 0700
+
+- name: copy authorized_keys to remote host
+  copy:
+    src: authorized_keys
+    dest: /home/deploy/.ssh/authorized_keys
+    owner: deploy
+    group: deploy
+    mode: 0600

@@ -1,0 +1,6 @@
+---
+- name: create user
+  user:
+    name: deploy
+    shell: /bin/bash
+    expires: -1

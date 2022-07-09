@@ -1,0 +1,1 @@
+deploy_user ansible_host=139.180.133.8 ansible_ssh_pass="BfEYtQt82Qx2" ansible_user=root ansible_port=22

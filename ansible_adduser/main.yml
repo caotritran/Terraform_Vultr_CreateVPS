@@ -1,0 +1,9 @@
+- name: managed user playbook
+  hosts: all
+  become: yes
+  become_method: sudo
+  
+  roles:
+    - Create_User
+    - Copy_Key
+    - Add-Sudo-File
