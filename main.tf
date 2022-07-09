@@ -42,8 +42,8 @@ resource "vultr_instance" "new_instance" {
     connection {
       type        = "ssh"
       user        = "root"
-      private_key = file("/home/tritran/Desktop/id_rsa")
-      #private_key = file("/opt/terraform/id_rsa")
+      #private_key = file("/home/tritran/Desktop/id_rsa")
+      private_key = file("/opt/terraform/id_rsa")
       host = self.main_ip
       timeout = "10m"
     }
