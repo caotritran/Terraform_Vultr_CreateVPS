@@ -14,7 +14,7 @@ terraform {
 
 variable "api_key" {
   type    = string
-  default = "C27SXVLNXLT7RVS52SMMDBNAGKAVDDBJNWMQ"
+  default = "INPUT_TOKEN_HERE"
 }
 
 # Configure the DigitalOcean Provider
